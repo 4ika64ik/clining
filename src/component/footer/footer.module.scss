@@ -1,0 +1,42 @@
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1060px) {
+    @content;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 30px;
+  gap: 20px;
+
+  @include on-tablet{
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.first {
+  text-align: center;
+
+  @include on-tablet{
+    width: 30%;
+  }
+}
+
+.adres {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+
+  @include on-tablet{
+    width: 30%;
+  }
+}

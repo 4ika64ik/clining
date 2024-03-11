@@ -1,0 +1,78 @@
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1060px) {
+    @content;
+  }
+}
+
+.sotr {
+  padding: 50px 16px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: block;
+    background-color: #318d62;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  &__info {
+    text-align: center;
+  }
+
+  &__blockinfo {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 953px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    height: 110px;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 20px;
+    max-width: 438px;
+
+    @include on-tablet {
+      width: 46%;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    box-shadow: 5px 5px 5px #318d62;
+  }
+}
