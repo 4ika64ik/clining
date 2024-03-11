@@ -21,11 +21,13 @@ function Form(props) {
     const name = formData.get('name');
     const phone = formData.get('phone');
     const social = formData.get('social');
+    const saits = "KLINING"
 
     const data = {
       name: name,
       phone: phone,
-      telegram: social === 'WhatsApp или Telegram' ? 'WhatsApp или Telegram' : 'Нет WhatsApp или Telegram'
+      telegram: social === 'WhatsApp или Telegram' ? 'WhatsApp или Telegram' : 'Нет WhatsApp или Telegram',
+      saits : saits,
     };
     console.log('Form submitted!');
     axios.post(URI_API, data)
